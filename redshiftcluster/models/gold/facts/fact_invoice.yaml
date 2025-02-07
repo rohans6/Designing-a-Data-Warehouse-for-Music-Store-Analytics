@@ -1,0 +1,42 @@
+version 2:
+models:
+  - name: fact_invoice
+    description: "A fact table for invoice"
+    columns:
+      - name: InvoiceId
+        description: "Primary Key for Invoice"
+        tests:
+          - unique
+          - not_null
+      - name: CustomerId
+        description: "Foreign Key for Customer"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_customer')
+              field: CustomerId
+      - name: InvoiceDate
+        description: "Date for Invoice"
+      - name: BillingAddress
+        description: "BillingAddress for Invoice"
+      - name: BillingCity
+        description: "BillingCity for Invoice"
+      - name: BillingState
+        description: "BillingState for Invoice"
+      - name: BillingCountry
+        description: "BillingCountry for Invoice"
+      - name: BillingPostalCode
+        description: "BillingPostalCode for Invoice"
+      - name: Total
+        description: "Total amount for Invoice"
+        tests:
+        - not_null
+      - name: TotalQuantity
+        description: "Total Quantity for Invoice"
+        tests:
+        - not_null
+      - name: TotalBytes
+        description: "Total Bytes for Invoice"
+        tests:
+        - not_null  
+      

@@ -1,0 +1,14 @@
+version 2:
+models:
+  - name: dim_artist
+    description: "A dimension table for artist"
+    columns:
+      - name: artistid
+        description: "Primary Key for artist"
+        tests:
+          - unique
+          - not_null
+      - name: name
+        description: "Name of the artist"
+    
+

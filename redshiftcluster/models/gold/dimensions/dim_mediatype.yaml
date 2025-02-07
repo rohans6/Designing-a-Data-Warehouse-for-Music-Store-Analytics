@@ -1,0 +1,12 @@
+version 2:
+models:
+  - name: dim_mediatype
+    description: "A dimension table for MediaType"
+    columns:
+      - name: MediaTypeId
+        description: "Primary Key for MediaType"
+        tests:
+          - unique
+          - not_null
+      - name: Name
+        description: "Name of the MediaType"

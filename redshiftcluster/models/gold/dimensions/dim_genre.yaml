@@ -1,0 +1,12 @@
+version 2:
+models:
+  - name: dim_genre
+    description: "A dimension table for Genre"
+    columns:
+      - name: GenreId
+        description: "Primary Key for Genre"
+        tests:
+          - unique
+          - not_null
+      - name: Name
+        description: "Name of the Genre"

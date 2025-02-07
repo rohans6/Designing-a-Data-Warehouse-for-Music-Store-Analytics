@@ -1,0 +1,47 @@
+version 2:
+models:
+  - name: dim_track
+    description: "A dimension table for Track"
+    columns:
+      - name: TrackId
+        description: "Primary Key for Track"
+        tests:
+          - unique
+          - not_null
+      - name: Name
+        description: "Name of the Track"
+      - name: AlbumId
+        description: "Foreign Key for Album"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_album')
+              field: AlbumId
+      - name: MediaTypeId
+        description: "Foreign Key for Media Type"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_media_type')
+              field: MediaTypeId
+      - name: GenreId
+        description: "Foreign Key for Genre"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_genre')
+              field: GenreId
+      - name: Composer
+        description: "Composer of the Track"
+      - name: Milliseconds
+        description: "Duration of the Track in milliseconds"
+        tests:
+          - not_null
+      - name: Bytes
+        description: "Size of the Track in bytes"
+        tests:
+          - not_null
+      - name: UnitPrice
+        description: "Price of the Track"
+        tests:
+          - not_null

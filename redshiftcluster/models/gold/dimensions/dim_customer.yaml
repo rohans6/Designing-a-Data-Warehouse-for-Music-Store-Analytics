@@ -1,0 +1,28 @@
+version 2:
+models:
+  - name: dim_customer
+    description: "A dimension table for Customer"
+    columns:
+      - name: CustomerId
+        description: "Primary Key for Customer"
+        tests:
+          - unique
+          - not_null
+      - name: FirstName
+        description: "First Name of Customer"
+      - name: LastName
+        description: "Last Name of Customer"
+      - name: Company
+        description: "Company Name of  Customer"
+      - name: City
+        description: "City of Customer"
+      - name: Country
+        description: "Country of Customer"
+      - name: SupportRepId
+        description: "Foreign Key referencing Employee table"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_employee')
+              field: EmployeeId
+

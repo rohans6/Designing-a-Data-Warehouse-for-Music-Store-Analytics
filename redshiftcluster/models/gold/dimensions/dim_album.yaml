@@ -1,0 +1,21 @@
+version 2:
+models:
+  - name: dim_album
+    description: "A dimension table for album"
+    columns:
+      - name: albumid
+        description: "Primary Key for album"
+        tests:
+          - unique
+          - not_null
+      - name: title
+        description: "Title for album"
+      - name: artistid
+        description: "Foreign Key referencing artist table"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_artist')
+              field: artistid
+
+

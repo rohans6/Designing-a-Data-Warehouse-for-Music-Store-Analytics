@@ -1,0 +1,12 @@
+version 2:
+models:
+  - name: dim_playlist
+    description: "A dimension table for Playlist"
+    columns:
+      - name: PlaylistId
+        description: "Primary Key for Playlist"
+        tests:
+          - unique
+          - not_null
+      - name: Name
+        description: "Name of the Playlist"

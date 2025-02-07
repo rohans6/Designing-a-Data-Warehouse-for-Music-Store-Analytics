@@ -1,0 +1,17 @@
+version 2:
+models:
+  - name: dim_playlisttrack
+    description: "A dimension table for playlisttrack"
+    columns:
+      - name: PlaylistId
+        description: "Id for playllist"
+        tests:
+          - not_null
+      - name: TrackId
+        description: "Foreign Key for Track"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_track')
+              field: TrackId
+        

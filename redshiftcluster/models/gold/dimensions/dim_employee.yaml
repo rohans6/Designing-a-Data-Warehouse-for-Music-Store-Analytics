@@ -1,0 +1,29 @@
+version 2:
+models:
+  - name: dim_employee
+    description: "A dimension table for Employee"
+    columns:
+      - name: EmployeeId
+        description: "Primary Key for Employee"
+        tests:
+          - unique
+          - not_null
+      - name: LastName
+        description: "Last Name of Employee"
+      - name: FirstName
+        description: "First Name of Employee"
+      - name: Title
+        description: "Desgination of  Employee"
+      - name: ReportTo
+        description: "The id of the employee this employee reports to"
+      - name: BirthDate
+        description: "Birth Date of Employee"
+      - name: HireDate
+        description: "Hire Date of Employee"  
+      - name: City
+        description: "City of Employee"
+      - name: State
+        description: "State of Employee"
+      - name: Country
+        description: "Country of Employee"
+     
