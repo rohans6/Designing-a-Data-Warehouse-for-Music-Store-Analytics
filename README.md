@@ -80,7 +80,7 @@ To ensure efficient data ingestion and transformation, I implemented an **ETL pi
 ## **4.1. Automated Data Processing Workflow**
 The ETL process follows a structured pipeline:
 
-![Data Processing Workflow](attachment://image.png)
+![Data Processing Workflow](etl.png)
 
 ### **4.2. Step-by-Step Workflow**
 ### **1. CSV File Upload (S3 Trigger)**
