@@ -103,3 +103,45 @@ The ETL process follows a structured pipeline:
 - **Optimizations Achieved**:
   - **13% reduction in storage costs** due to ORC’s columnar storage efficiency.
   - **46% improvement in data processing time**, enabling faster ingestion into Redshift.
+# **Step 5: Implementing the Data Warehouse in Redshift**
+
+## **5.1. Creating the Bronze Schema**
+The **Bronze layer** is the initial ingestion layer where raw data is stored **without any transformations**. This schema is created in **AWS Redshift Spectrum** and directly queries data from the **AWS Glue Data Catalog**.
+
+```sql
+CREATE EXTERNAL SCHEMA bronze
+FROM DATA CATALOG
+DATABASE "redshift-db"
+IAM_ROLE 'arn:aws:iam::XXXXXXXXXXXX:role/service-role/AmazonRedshift-CommandsAccessRole-XXXXXXXX'
+REGION 'eu-west-1';
+```
+## **5.2. Silver Layer - Processed & Standardized Data**
+The Silver Layer is responsible for data standardization, cleaning, and transformation to ensure high-quality data for analytics.
+
+### Processing in Silver Layer:-
+* Data Type Handling: Standardized data types for consistency.
+* Missing Values Treatment:
+Imputed missing values for critical fields.
+Removed records where missing data compromised integrity.
+* Data Cleaning:
+Removed duplicates to avoid incorrect aggregations.
+Fixed inconsistencies in categorical data (e.g., standardizing country names).
+
+### Incremental Data Processing
+* Implemented materialized = incremental in DBT to process only new or updated records instead of full refreshes.
+* Used incremental_strategy = delete+insert, ensuring:
+New records are inserted.
+Existing records are updated with the latest information
+
+## **5.3. Gold Layer - Aggregated Analytical Data**
+The Gold Layer is where data is aggregated and structured for final business intelligence reporting.
+
+### Processing in Gold Layer
+* Fact Table Creation:
+Merged Invoice and InvoiceLine into a single fact table (fact_invoice).
+Included business metrics like Quantity and Total Revenue.
+Applied denormalization to optimize for analytical queries.
+
+### Schema & Testing in Gold Layer
+* Defined primary keys, foreign keys, and constraints in DBT YAML.
+Ensured data integrity with tests for uniqueness, null constraints, and relationship checks.
