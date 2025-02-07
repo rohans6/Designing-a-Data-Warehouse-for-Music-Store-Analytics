@@ -63,7 +63,7 @@ To support efficient analytics and ensure fast query performance, I designed a *
 
 The following is the **Star Schema** design that I constructed:
 
-![Star Schema Design](attachment://ER.drawio.png)
+![Star Schema Design](ER.drawio.png)
 
 ## **Justification for Star Schema**
 - **Optimized for Analytics**: The schema is structured to allow quick aggregations and trend analysis.
