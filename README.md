@@ -42,4 +42,35 @@ Given the performance and storage constraints, AWS Redshift is the preferred dat
 - **Seamless Integration with S3**: Facilitates fast data ingestion using `COPY` commands from Amazon S3.  
 - **Scalability**: Can easily scale storage and compute capacity as data grows
 
+# **Step 3: Data Modeling - Star Schema Design**
+
+To support efficient analytics and ensure fast query performance, I designed a **Star Schema** for the data warehouse. The schema consists of:
+
+- **Fact Tables**:
+  - `fact_invoice`: Stores overall invoice details related to customer purchases.
+  - `fact_invoice_line`: Stores detailed invoice line items for each purchased track.
+
+- **Dimension Tables**:
+  - `dim_album`
+  - `dim_artist`
+  - `dim_customer`
+  - `dim_employee`
+  - `dim_genre`
+  - `dim_playlist`
+  - `dim_media_type`
+  - `dim_playlist_track`
+  - `dim_track`
+
+The following is the **Star Schema** design that I constructed:
+
+![Star Schema Design](attachment://ER.drawio.png)
+
+## **Justification for Star Schema**
+- **Optimized for Analytics**: The schema is structured to allow quick aggregations and trend analysis.
+- **Faster Query Execution**: By using fact tables for transactional data and dimension tables for reference data, we reduce complex joins and improve query performance.
+- **Scalability**: The design ensures easy scaling as new data and attributes are introduced.
+- **Supports Business Insights**: The schema enables customer segmentation, sales trend analysis, and employee performance tracking.
+
+Next, I will move on to **Step 4: ETL Process**, where I will extract data from S3, transform it, and load it into AWS Redshift.
+
 
