@@ -101,5 +101,5 @@ The ETL process follows a structured pipeline:
 - Once the Glue job completes, an **AWS Glue Crawler** is automatically triggered.
 - It **scans the ORC files and updates the AWS Glue Data Catalog** with the latest schema.
 - **Optimizations Achieved**:
-  - **18% reduction in storage costs** due to ORC’s columnar storage efficiency.
+  - **13% reduction in storage costs** due to ORC’s columnar storage efficiency.
   - **46% improvement in data processing time**, enabling faster ingestion into Redshift.
