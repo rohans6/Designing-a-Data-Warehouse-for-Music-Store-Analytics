@@ -1,0 +1,53 @@
+[0m12:27:39.550449 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023B698725D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023B69870210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023B69870090>]}
+
+
+============================== 12:27:39.559462 | a819d2be-b12d-4683-8e59-e710e374540a ==============================
+[0m12:27:39.559462 [info ] [MainThread]: Running with dbt=1.9.2
+[0m12:27:39.561438 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': 'logs', 'profiles_dir': 'C:\\Users\\rohan\\.dbt', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'invocation_command': 'dbt init', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m12:27:50.284260 [debug] [MainThread]: Starter project path: D:\DataScience\Projects\Designing-a-Data-Warehouse-for-Music-Store-Analytics\venv\Lib\site-packages\dbt\include\starter_project
+[0m12:27:50.344418 [info ] [MainThread]: 
+Your new dbt project "redshiftcluster" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m12:27:50.346445 [info ] [MainThread]: Setting up your profile.
+[0m12:27:55.766476 [debug] [MainThread]: Redshift adapter: Setting redshift_connector to ERROR
+[0m12:27:55.766476 [debug] [MainThread]: Redshift adapter: Setting redshift_connector.core to ERROR
+[0m12:29:04.629834 [info ] [MainThread]: Profile redshiftcluster written to C:\Users\rohan\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m12:29:04.631832 [debug] [MainThread]: Command `dbt init` succeeded at 12:29:04.631832 after 85.20 seconds
+[0m12:29:04.632824 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023B6981D110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023B63263490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023B6A1870D0>]}
+[0m12:29:04.632824 [debug] [MainThread]: Flushing usage events
+[0m12:29:05.124293 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:29:14.749372 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000263C6FE1F90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000263C6FE1950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000263C6FE1E90>]}
+
+
+============================== 12:29:14.754259 | f9bdc806-265d-417c-9958-8291586c8865 ==============================
+[0m12:29:14.754259 [info ] [MainThread]: Running with dbt=1.9.2
+[0m12:29:14.755381 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\rohan\\.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt debug', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m12:29:14.788434 [info ] [MainThread]: dbt version: 1.9.2
+[0m12:29:14.789971 [info ] [MainThread]: python version: 3.11.4
+[0m12:29:14.792126 [info ] [MainThread]: python path: D:\DataScience\Projects\Designing-a-Data-Warehouse-for-Music-Store-Analytics\venv\Scripts\python.exe
+[0m12:29:14.793118 [info ] [MainThread]: os info: Windows-10-10.0.22631-SP0
+[0m12:29:15.045960 [debug] [MainThread]: Redshift adapter: Setting redshift_connector to ERROR
+[0m12:29:15.046959 [debug] [MainThread]: Redshift adapter: Setting redshift_connector.core to ERROR
+[0m12:29:15.123933 [info ] [MainThread]: Using profiles dir at C:\Users\rohan\.dbt
+[0m12:29:15.126464 [info ] [MainThread]: Using profiles.yml file at C:\Users\rohan\.dbt\profiles.yml
+[0m12:29:15.127252 [info ] [MainThread]: Using dbt_project.yml file at D:\DataScience\Projects\Designing-a-Data-Warehouse-for-Music-Store-Analytics\dbt_project.yml
+[0m12:29:15.128310 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m12:29:15.130378 [debug] [MainThread]: Command `dbt debug` failed at 12:29:15.130378 after 0.48 seconds
+[0m12:29:15.131405 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000263C7002090>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000263C6F894D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000263C2ECE590>]}
+[0m12:29:15.132323 [debug] [MainThread]: Flushing usage events
+[0m12:29:15.568237 [debug] [MainThread]: An error was encountered while trying to flush usage events
