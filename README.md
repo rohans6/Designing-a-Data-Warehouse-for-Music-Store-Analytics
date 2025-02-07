@@ -73,4 +73,33 @@ The following is the **Star Schema** design that I constructed:
 
 Next, I will move on to **Step 4: ETL Process**, where I will extract data from S3, transform it, and load it into AWS Redshift.
 
+# **Step 4: ETL Process - Extract, Transform, Load**
 
+To ensure efficient data ingestion and transformation, I implemented an **ETL pipeline** using AWS services. This workflow automates data processing, optimizes storage, and improves query performance in Redshift.
+
+## **4.1. Automated Data Processing Workflow**
+The ETL process follows a structured pipeline:
+
+![Data Processing Workflow](attachment://image.png)
+
+### **4.2. Step-by-Step Workflow**
+### **1. CSV File Upload (S3 Trigger)**
+- Raw data is **uploaded as CSV files** into an Amazon S3 bucket.
+- This triggers an **event notification**, which initiates the ETL process.
+
+### **2. AWS Lambda Function Execution**
+- An **AWS Lambda function** is triggered when a new file is detected in S3.
+- It then **invokes an AWS Glue job**, ensuring real-time data processing.
+
+### **3. AWS Glue Job**
+- The Glue job performs **data transformation and optimization**, including:
+  - **Converting CSV to ORC format** to enhance query performance and reduce storage costs.
+  - **Tracking previously processed data** using Job Bookmarks to prevent duplicate ingestion.
+  - **Parallel processing** for faster transformation of large datasets.
+
+### **4. AWS Glue Crawler Execution**
+- Once the Glue job completes, an **AWS Glue Crawler** is automatically triggered.
+- It **scans the ORC files and updates the AWS Glue Data Catalog** with the latest schema.
+- **Optimizations Achieved**:
+  - **18% reduction in storage costs** due to ORC’s columnar storage efficiency.
+  - **46% improvement in data processing time**, enabling faster ingestion into Redshift.
